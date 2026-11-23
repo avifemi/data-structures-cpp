@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 using namespace std;
 
 struct Node
@@ -21,7 +22,7 @@ Node* insert(Node* root, int key)
         root->pLeft = insert(root->pLeft, key);
     }
 
-    if(key > root->data)
+    else if(key > root->data)
     {
         root->pRight = insert(root->pRight, key);
     }
@@ -89,7 +90,7 @@ int search(Node* root, int key)
         else
             pNow = pNow->pRight;
     }
-    throw;
+    throw runtime_error("Element not found");
 }
 
 void deleteTree(Node* root)
@@ -132,9 +133,12 @@ void postorder(Node* root)
 
 int main()
 {
-    Node* root = new Node(10);
-    insert(root, 20);
-    insert(root, 8);
+    Node* root = nullptr;
+    root = insert(root, 10);
+    insert(root, 5);
+    insert(root, 15);
     inorder(root);
-    insert(root, 20);
+    cout << endl;
+    root = deleteNode(root, 5);
+    inorder(root);
 }

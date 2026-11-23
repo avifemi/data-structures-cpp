@@ -1,36 +1,36 @@
-# Data Structures in C++
+# Структуры данных на C++
 
-A collection of standalone C++ implementations of classic data structures and probabilistic data structures.
+Репозиторий содержит самостоятельные реализации классических и вероятностных структур данных на C++.
 
-The examples focus on core operations and basic implementation concepts. Each source file contains its own `main()` function and can be compiled separately.
+Примеры демонстрируют основные операции и принципы работы каждой структуры. Каждый исходный файл содержит собственную функцию `main()` и компилируется отдельно.
 
-## Implementations
+## Реализации
 
-| File | Data structure | Main operations |
+| Файл | Структура данных | Основные операции |
 |---|---|---|
-| `bst.cpp` | Binary Search Tree (BST) | Insertion, search, deletion, inorder / preorder / postorder traversal |
-| `btree.cpp` | B-tree | Insertion, search, deletion, inorder traversal |
-| `hashtable.cpp` | Hash Table | Insertion, search, removal, collision handling with separate chaining |
-| `trie.cpp` | Trie (prefix tree) | String insertion, exact-key search, removal |
-| `bloom_filter.cpp` | Bloom Filter | Probabilistic membership testing with multiple hash functions |
-| `count-min_sketch.cpp` | Count-Min Sketch | Approximate frequency estimation |
+| `bst.cpp` | Бинарное дерево поиска (BST) | Вставка, поиск, удаление, обходы inorder / preorder / postorder |
+| `btree.cpp` | B-дерево | Вставка, поиск, удаление, симметричный обход |
+| `hashtable.cpp` | Хеш-таблица | Вставка, поиск, удаление, обработка коллизий методом цепочек |
+| `trie.cpp` | Префиксное дерево (Trie) | Вставка строк, поиск точного совпадения, удаление |
+| `bloom_filter.cpp` | Фильтр Блума | Вероятностная проверка принадлежности элемента множеству с использованием нескольких хеш-функций |
+| `count-min_sketch.cpp` | Count-Min Sketch | Приближённая оценка частоты появления элементов |
 
-## Build and run
+## Компиляция и запуск
 
-Compile each implementation separately with a C++17-compatible compiler.
+Для компиляции каждой реализации отдельно понадобится компилятор с поддержкой C++17.
 
-For example, to compile and run the Binary Search Tree implementation with `g++`:
+Например, чтобы скомпилировать и запустить бинарное дерево поиска с помощью `g++`:
 
 ```bash
 g++ -std=c++17 bst.cpp -o bst
 ./bst
 ```
 
-To run another implementation, replace `bst.cpp` with the corresponding source file name and choose an executable name.
+Для запуска другой реализации замените `bst.cpp` на имя нужного исходного файла, а `bst` — на имя исполняемого файла.
 
-## Notes
+## Примечания
 
-- The examples use the C++ standard library and do not require external dependencies.
-- The Bloom Filter is a probabilistic data structure: it may report false positives, but a correctly configured filter does not produce false negatives for elements that have been added.
-- Count-Min Sketch estimates element frequencies and may overestimate counts because of hash collisions.
-- These are educational implementations intended to demonstrate data structure concepts and their core operations.
+- В примерах используются стандартные библиотеки C++; внешние зависимости не требуются.
+- Фильтр Блума может давать ложноположительные результаты, но при корректной настройке не даёт ложноотрицательных результатов для добавленных элементов.
+- Count-Min Sketch оценивает частоту появления элементов и может завышать оценку из-за коллизий хеш-функций.
+- Реализации имеют учебный характер и предназначены для демонстрации принципов работы структур данных и основных операций над ними.
